@@ -19,10 +19,22 @@ ion-menu-button {
 #container p {
   font-size: 16px;
   line-height: 22px;
-  color: #8c8c8c;
+  color: #0ea7b8;
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
+}
+
+.imagen{
+  
+  width: 200px !important;
+}
+
+
+imagenes{
+  
+  --background: linear-gradient(-45deg,  #5fbba4, rgb(103, 207, 255) );
+
 }

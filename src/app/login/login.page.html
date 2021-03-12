@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de Sesion</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center css">
+<ion-card class="login-card">
+  <ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Nombres"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Clave" type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center" routerLink="../folder/Inbox">
+        <ion-button color="dark">Ingresar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button color="dark" fill="clear" size="small" routerLink="../recuperar-clave">¿Olvidaste tu clave?</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        <ion-button color="dark" fill="clear" size="small" routerLink="../registro">Registrarse</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card-content>
+</ion-card>
+</ion-content>
