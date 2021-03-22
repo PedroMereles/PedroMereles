@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-perfil',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+  user: any;
 
-  constructor() { }
+
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.auth.user$.subscribe(user =>{
+      this.user = user;
+    })
   }
 
+  editarPerfil()
+  {
+      this.router.navigate(['/editar/perfil']);
+      
+  }
 }

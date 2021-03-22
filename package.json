@@ -1,6 +1,6 @@
 {
   "name": "WashApp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
@@ -15,11 +15,13 @@
   "dependencies": {
     "@angular/common": "~11.2.0",
     "@angular/core": "~11.2.0",
+    "@angular/fire": "^6.1.4",
     "@angular/forms": "~11.2.0",
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
     "@ionic/angular": "^5.5.2",
+    "firebase": "^8.3.1",
     "ion2-calendar": "^3.0.0-rc.0",
     "ionic2-calendar": "^0.6.6",
     "moment": "^2.29.1",
@@ -28,7 +30,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1101.4",
+    "@angular-devkit/build-angular": "^0.1100.2",
     "@angular/cli": "~11.1.4",
     "@angular/compiler": "~11.2.0",
     "@angular/compiler-cli": "~11.2.0",

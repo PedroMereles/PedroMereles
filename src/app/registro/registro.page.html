@@ -1,34 +1,38 @@
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Registrarse</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 <ion-card>
   <ion-card-content>
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Nombres"></ion-input>
+          <ion-input placeholder="Nombre" required type= "text"[(ngModel)]="nombre"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Documento"></ion-input>
+          <ion-input placeholder="Correo Electronico" required type= "text"[(ngModel)]="email"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Contacto"></ion-input>
+          <ion-input placeholder="Documento" required type= "text"[(ngModel)]="documento"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Direccion"></ion-input>
+          <ion-input placeholder="Contacto" required type= "text"[(ngModel)]="telefono"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Clave" type="password"></ion-input>
+          <ion-input placeholder="Direccion" required type= "text"[(ngModel)]="direccion"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Clave" type="password" required type= "text"[(ngModel)]="password"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button color="dark" routerLink="">Guardar</ion-button>
+        <ion-button type="submit" color="dark" routerLink="" shape="round" (click)="registro()" >Guardar</ion-button>
       </ion-col>
     </ion-row>
 

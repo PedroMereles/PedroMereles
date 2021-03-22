@@ -7,21 +7,33 @@
           <ion-note>hi@ionicframework.com</ion-note>
 
           <ion-menu-toggle auto-hide="false" >
-            <ion-item routerDirection="root" routerLink="perfil" lines="none" detail="false" routerLinkActive="selected">
+            <ion-item   lines="none" detail="false" routerLinkActive="selected" shape="round"(click)="irPerfil()">
               <ion-icon name="people-circle-sharp"></ion-icon>
               <ion-label>Mi Perfil</ion-label>
             </ion-item>
+
+            <ion-item routerDirection="root" routerLink="reservar" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon name="list-sharp"></ion-icon>
+              <ion-label>Servicios</ion-label>
+            </ion-item>
           </ion-menu-toggle>
         </ion-list>
-
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
+        <ion-list id="inbox-list">
+            <ion-menu-toggle auto-hide="false" >
+            <ion-item routerDirection="root" routerLink="servicios" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon name="list-sharp"></ion-icon>
+              <ion-label>Servicios</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
+        <ion-list id="inbox-list">
+          <ion-menu-toggle auto-hide="false" >
+           <ion-item routerDirection="root" shape="round"(click)="logout()" lines="none" detail="false" routerLinkActive="selected">
+             <ion-icon name="list-sharp"></ion-icon>
+             <ion-label>Desconectarse</ion-label>
+           </ion-item>
+          </ion-menu-toggle>
+       </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

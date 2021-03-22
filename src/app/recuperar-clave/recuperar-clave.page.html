@@ -9,21 +9,26 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="contenido-recuperar">
-    <ion-card-content>
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-input placeholder="Correo" type="email"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
+  <form class="ion-padding-top"(submit)="resetear()">
+    <div class="ion-text-center"> 
+      <small>Introduzca su correo electronico.. Asi podra recibir las instrucciones de recuperacion de cuenta !</small>
+    </div>
+    <ion-card class="contenido-recuperar">
+      <ion-card-content>
         <ion-row>
-        <ion-col>
-          <ion-button color="dark">Enviar</ion-button>
-        </ion-col>
-      </ion-row>
-  
-    </ion-card-content>
-  </ion-card>
+          <ion-col>
+            <ion-item>
+              <ion-input placeholder="Ingrese su Correo Electronico" type="email" [(ngModel)]="email" name='email'></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+          <ion-col>
+            <ion-button color="dark" type="submit" >Enviar</ion-button>
+          </ion-col>
+        </ion-row>
+    
+      </ion-card-content>
+    </ion-card>
+</form>
 </ion-content>

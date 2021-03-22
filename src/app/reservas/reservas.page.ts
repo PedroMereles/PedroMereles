@@ -14,7 +14,7 @@ export class ReservasPage implements OnInit {
   }
   eventSource= [];
   calendar = {
-    mode :'day',
+    mode :'week',
     currenDate: new Date()
   }
   onEventSelected(){

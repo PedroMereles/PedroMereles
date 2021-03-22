@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-button color="primary" routerLink="">Volver</ion-button>
+  <ion-card>
+    <ion-card-content>
+      <h2>{{user?.userNombre}}</h2>
+      <p>{{user?.userDocumento}}</p>
+      <p>{{user?.userEmail}}</p>
+      <p>{{user?.userDireccion}}</p>
+      <p>{{user?.userTelefono}}</p>
+      <p>{{user?.createdAt | date}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-button color="primary" shape="round"(click)="editaPerfil()"  >Editar Perfil</ion-button>
 </ion-content>

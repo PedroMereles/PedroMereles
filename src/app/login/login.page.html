@@ -11,26 +11,26 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Nombres"></ion-input>
+          <ion-input placeholder="Email" type="email" [(ngModel)]="email" name='email'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Clave" type="password"></ion-input>
+          <ion-input placeholder="Contraseña" type="password" [(ngModel)]="password" name='password'></ion-input>
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="12" class="ion-text-center" routerLink="../folder/Inbox">
-        <ion-button color="dark">Ingresar</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12" class="ion-text-center">
-        <ion-button color="dark" fill="clear" size="small" routerLink="../recuperar-clave">¿Olvidaste tu clave?</ion-button>
+        <ion-button color="dark" shape="round" type="submit" (click)="login()" >Ingresar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button color="dark" fill="clear" size="small" routerLink="../recuperar-clave">¿Olvidaste tu contraseña?</ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="ion-text-center">
       <ion-col size="12">
-        <ion-button color="dark" fill="clear" size="small" routerLink="../registro">Registrarse</ion-button>
+        <ion-button color="dark"  fill="clear" size="small" routerLink="../registro">No tienes una cuenta?, Registrate</ion-button>
       </ion-col>
     </ion-row>
 
