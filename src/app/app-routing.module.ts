@@ -55,6 +55,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'cal-modal',
+    loadChildren: () => import('./cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
   }
 ];
 
