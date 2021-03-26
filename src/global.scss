@@ -27,7 +27,8 @@
 
 ion-content{
    /* --background:rgb(50, 144, 231) ;*/
-   --background: linear-gradient(-45deg,  #23A6D5, #23D5AB, rgb(86, 167, 204) );
+   /*--background: linear-gradient(-45deg,  #23A6D5, #23D5AB, rgb(86, 167, 204) );*/
+   --background: linear-gradient(-45deg, #6830a8, #3fbedd, rgb(74, 229, 235));
    --background-size :400% 400%;
    position: relative;
 }

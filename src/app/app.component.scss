@@ -117,3 +117,19 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+ion-content {
+  --background: linear-gradient(-45deg,  #5a1ba3, #25a1c0, rgb(62, 224, 230) )  !important;
+  --background-size :400% 400%;
+    position: relative;
+}
+ion-list{
+  --background: linear-gradient(-45deg, #5e00c9, #258fc0, rgb(62, 224, 230) )  !important;
+  --background-size :400% 400%;
+}
+
+.icon{
+  width: 100px;
+  height: 30;
+ margin: auto  !important;
+}
