@@ -23,7 +23,7 @@
     "@ionic/angular": "^5.5.2",
     "firebase": "^8.3.1",
     "ion2-calendar": "^3.0.0-rc.0",
-    "ionic2-calendar": "^0.6.6",
+    "ionic2-calendar": "^0.6.7",
     "moment": "^2.29.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

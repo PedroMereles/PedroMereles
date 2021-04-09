@@ -25,7 +25,13 @@ export class LoginPage implements OnInit
   
   login(){
     if(this.email && this.password){
-      this.auth.signIn(this.email , this.password);
+      this.auth.signIn(this.email , this.password)
+      .then(()=>{
+        console.log("funciona")
+      })
+      .catch((error)=>{
+        console.log(error)
+      });
     }else{
       this.toast('Ingrese su correo electronico','warning');
     }

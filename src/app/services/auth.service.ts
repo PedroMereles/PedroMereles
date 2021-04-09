@@ -19,7 +19,7 @@ export class AuthService {
   user: User;
 
   constructor( 
-     private afs: AngularFirestore,
+    private afs: AngularFirestore,
     private afauth: AngularFireAuth,
     private router : Router,
     private loadingCtrl : LoadingController,
@@ -32,13 +32,16 @@ export class AuthService {
 
         if(user)
         {
-          return this.afs.doc(`user/$(user.uid)`).valueChanges();
+          return this.afs.doc<User>(`user/${user.uid}`).valueChanges();
         }else{
           return of(null);
         }
       })
     )
-  }// fin del constructor
+  }
+  
+  
+  // fin del constructor
 
   async signIn(email, password){
     const loading = await this.loadingCtrl.create(
@@ -55,9 +58,12 @@ export class AuthService {
         {
           if(!data.user.emailVerified){
             loading.dismiss();
-            this.toast('Verifique su correo electronico...', 'warning')<
+            this.toast('Verifique su correo electronico...', 'warning');
+            loading.dismiss();
             this.afauth.signOut();
+            
           }else{
+            console.log(data);
             loading.dismiss();
             this.router.navigate(['/home']);// este es el home
 
@@ -77,6 +83,35 @@ export class AuthService {
 
 
   } // FIN DEL sigIn
+
+  async loginTest(email, password){
+    const loading = await this.loadingCtrl.create(
+      {
+        message: 'Autenticando...',
+        spinner : 'crescent' , 
+        showBackdrop: true
+      });
+    this.afauth.signInWithEmailAndPassword(email, password).then((data)=>
+        {
+          if(!data.user.emailVerified){
+            loading.dismiss();
+            this.toast('Verifique su correo electronico...', 'warning');
+            loading.dismiss();
+            this.afauth.signOut();
+            
+          }else{
+            console.log(data);
+            loading.dismiss();
+            this.router.navigate(['home']);// este es el home
+
+          }
+        })
+        .catch(error =>{
+          this.toast(error.message,'danger');
+
+        })
+
+  }
 
   async signOut()
   {

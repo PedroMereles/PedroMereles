@@ -16,7 +16,6 @@ export class AppComponent {
     this.auth.signOut();
   }
   irPerfil(){
-    console.log("REDIRECCION");
     this.router.navigate(["/perfil"]);
   }
 

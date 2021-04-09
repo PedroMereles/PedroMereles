@@ -3,6 +3,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { distinctUntilKeyChanged } from 'rxjs/operators';
+import { TaskService } from '../services/task.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-registro',
@@ -18,18 +23,27 @@ export class RegistroPage implements OnInit
   telefono: string;
   direccion : string;
   password: string;
-
+  ip: string ;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(
     private afs: AngularFirestore,
     private afauth : AngularFireAuth,
     private router : Router,
     private loadingCtrl : LoadingController,
-    private  toastr : ToastController
-
+    private  toastr : ToastController,
+    private task : TaskService
   ) { }
 
   ngOnInit() {
+    this.task.getIpAddress().pipe(takeUntil(this.unsubscribe$)).subscribe(
+      data => this.ip = data.toString(),
+      error => console.log(<any>error));
+  }
+  ngOnDestroy() 
+  { 
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
   async registro(){
     if(this.nombre && this.email && this.documento && this.telefono && this.direccion && this.password)
@@ -52,13 +66,15 @@ export class RegistroPage implements OnInit
             'userDocumento' : this.documento,
             'userTelefono' : this.telefono,
             'userDireccion' : this.direccion,
-            'createdAt': Date.now()
+            'createdAt': Date.now(),
+            'iP': this.ip
           })
           
           .then(()=>{
             loading.dismiss();
             this.toast("Exito al registrarse! Por favor verifique su correo electronico", "success");
             this.router.navigate(["/login"]);
+            console.log(this.ip)
 
           })
           .catch(error =>{

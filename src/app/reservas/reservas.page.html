@@ -1,25 +1,77 @@
-// home.page.html
-
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Calendar Examples
+      Ionic Calendar
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCalModal()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+ 
+<ion-content class="contenido">
+   <!-- Card for adding a new event -->
+   <ion-card>
+    <ion-card-header tappable (click)="collapseCard = !collapseCard">
+      <ion-card-title>New Event</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="!collapseCard">
+ 
+      <ion-item>
+        <ion-label>Hora</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+      </ion-item>
 
-<ion-content>
-  <calendar [eventSource]="eventSource"
-  [calendarMode]="calendar.mode"
-  [currentDate]="calendar.currentDate"
-  (onCurrentDateChanged)="onCurrentDateChanged($event)"
-  (onRangeChanged)="reloadSource(startTime, endTime)"
-  (onEventSelected)="onEventSelected($event)"
-  (onTitleChanged)="onViewTitleChanged($event)"
-  (onTimeSelected)="onTimeSelected($event)"
-  startHour="8"
-  endHour="20"
-  step="30">
+ 
+    </ion-card-content>
+  </ion-card>
+
   
-</calendar>
+  <ion-segment [(ngModel)]="calendar.mode">
+    <ion-segment-button value="month">
+      <ion-label class="calendario">MES</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="week">
+      <ion-label class="calendario">SEMANA</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="day">
+      <ion-label class="calendario">DIA</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+ 
+  <ion-row>
+    <!-- Move back one screen of the slides -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="back()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+ 
+    <ion-col size="8" class="ion-text-center">
+      <h2>{{ viewTitle }}</h2>
+    </ion-col>
+ 
+    <!-- Move forward one screen of the slides -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="next()">
+        <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+ 
+  <calendar
+    [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    startHour="6"
+    endHour="19"
+    step="30"
+    startingDayWeek="1"
+  >
+  </calendar>
+ 
 </ion-content>

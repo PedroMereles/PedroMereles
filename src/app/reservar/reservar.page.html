@@ -9,6 +9,20 @@
 </ion-header>
 
 <ion-content>
+  <h1>LISTA DE TAREAS</h1>
+  <ion-list>
+    <ion-item *ngFor="let documentServicio of arrayColeccionServicio" >
+      <ion-grid>
+        <ion-row>
+          <h2>{{documentServicio.data.servicio}}</h2>
+        </ion-row>
+        <ion-row>
+          <p>{{documentServicio.data.precio}}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
   <ion-list>
     <ion-item>
       <ion-label >Pokémon Yellow</ion-label>

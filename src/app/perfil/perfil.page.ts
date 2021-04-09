@@ -17,10 +17,14 @@ export class PerfilPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.auth.user$.subscribe(user =>{
-      this.user = user;
-    })
+    this.cargarDatos();
   }
+
+  cargarDatos(){
+    this.auth.user$.subscribe(user =>{
+    this.user = user;
+    console.log(user);
+  })}
 
   editarPerfil()
   {

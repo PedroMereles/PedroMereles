@@ -4,6 +4,11 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate :[AuthGuard]
+  },
+  {
     path: 'folder/Inbox',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule),
     canActivate :[AuthGuard]
@@ -41,7 +46,8 @@ const routes: Routes = [
   },
   {
     path: 'servicios',
-    loadChildren: () => import('./servicios/servicios.module').then( m => m.ServiciosPageModule)
+    loadChildren: () => import('./servicios/servicios.module').then( m => m.ServiciosPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'reservar',
@@ -50,11 +56,7 @@ const routes: Routes = [
   {
     path: 'editar/perfil',
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule),
-    canActivate :[AuthGuard]
-  },
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    canActivate: [AuthGuard]
   },
   {
     path: 'cal-modal',
