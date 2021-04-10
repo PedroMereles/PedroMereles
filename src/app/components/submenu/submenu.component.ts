@@ -23,6 +23,9 @@ export class SubmenuComponent implements OnInit {
   irPerfil(){
     this.router.navigate(["/perfil"]);
   }
+  irServicios(){
+    this.router.navigate(["/reservar"]);
+  }
 
 
 }

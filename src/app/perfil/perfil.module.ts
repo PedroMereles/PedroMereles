@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { PerfilPageRoutingModule } from './perfil-routing.module';
-
+import { SubmenuComponent } from '../components/submenu/submenu.component';
 import { PerfilPage } from './perfil.page';
 
 @NgModule({
@@ -15,6 +15,6 @@ import { PerfilPage } from './perfil.page';
     IonicModule,
     PerfilPageRoutingModule
   ],
-  declarations: [PerfilPage]
+  declarations: [PerfilPage, SubmenuComponent]
 })
 export class PerfilPageModule {}

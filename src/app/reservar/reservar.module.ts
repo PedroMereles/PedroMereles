@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ReservarPageRoutingModule } from './reservar-routing.module';
-
+import { SubmenuComponent } from '../components/submenu/submenu.component';
 import { ReservarPage } from './reservar.page';
 
 @NgModule({
@@ -15,6 +15,6 @@ import { ReservarPage } from './reservar.page';
     IonicModule,
     ReservarPageRoutingModule
   ],
-  declarations: [ReservarPage]
+  declarations: [ReservarPage, SubmenuComponent]
 })
 export class ReservarPageModule {}

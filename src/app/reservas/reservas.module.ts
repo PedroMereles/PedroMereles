@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ReservasPageRoutingModule } from './reservas-routing.module';
-
+import { SubmenuComponent } from '../components/submenu/submenu.component';
 import { ReservasPage } from './reservas.page';
 
 import {NgCalendarModule} from 'ionic2-calendar'
@@ -18,6 +18,6 @@ import {NgCalendarModule} from 'ionic2-calendar'
     ReservasPageRoutingModule,
     NgCalendarModule
   ],
-  declarations: [ReservasPage]
+  declarations: [ReservasPage, SubmenuComponent]
 })
 export class ReservasPageModule {}
