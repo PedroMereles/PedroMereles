@@ -11,15 +11,30 @@
 </ion-header>
 
 <ion-content>
+  <div >
   <ion-card>
     <ion-card-content>
+      <h2>Nombre:</h2>
       <h2>{{user?.userNombre}}</h2>
+
+      <h2>Documento:</h2>
       <p>{{user?.userDocumento}}</p>
+
+      <h2>Correo Electronico:</h2>
       <p>{{user?.userEmail}}</p>
+
+      <h2>Direccion:</h2>
       <p>{{user?.userDireccion}}</p>
+
+      <h2>Contacto:</h2>
       <p>{{user?.userTelefono}}</p>
+
+      <h2>Fecha Registro:</h2>
       <p>{{user?.createdAt | date}}</p>
     </ion-card-content>
   </ion-card>
-  <ion-button type="submit" color="dark" routerLink="" shape="round" (click)="editarPerfil()" >Modificar Perfil</ion-button>
+</div>
+<div>
+  <ion-button type="submit"  routerLink="" shape="round" (click)="editarPerfil()" >Modificar Perfil</ion-button>
+</div>
 </ion-content>

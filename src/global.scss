@@ -39,6 +39,12 @@ textos{
 }
 .ion-toolbar{
     --background:  #3fbedd  !important;
-
-
+}
+ion-label, p{
+    font-family: 'RobotoMono'  !important;
+  }
+ion-list, ion-card{
+    background-color: transparent !important;
+    font-family: 'RobotoMono'  !important;
+    color: white
 }

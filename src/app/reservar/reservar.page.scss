@@ -1,0 +1,11 @@
+ion-item, ion-card,ion-row,
+ion-list, h1, p, ion-label, ion-content{
+    background-color: transparent !important;
+    font-family: 'RobotoMono'  !important;
+}
+ion-button{
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+    font-family: 'RobotoMono'  !important;
+}

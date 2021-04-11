@@ -18,24 +18,16 @@
           <ion-icon name="list-sharp"></ion-icon>
           <ion-label>Servicios</ion-label>
         </ion-item>
+
+        <ion-item routerDirection="root" shape="round"(click)="logout()" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon name="log-out-outline"></ion-icon>
+           <ion-label>Desconectarse</ion-label>
+         </ion-item>
+
       </ion-menu-toggle>
     </ion-list>
-    <ion-list id="inbox-list">
-        <!-- <ion-menu-toggle auto-hide="false" >
-        <ion-item routerDirection="root" routerLink="servicios" lines="none" detail="false" routerLinkActive="selected">
-          <ion-icon name="list-sharp"></ion-icon>
-          <ion-label>Servicios</ion-label>
-        </ion-item>
-      </ion-menu-toggle> -->
-    </ion-list>
-    <ion-list id="inbox-list">
-      <ion-menu-toggle auto-hide="false" >
-       <ion-item routerDirection="root" shape="round"(click)="logout()" lines="none" detail="false" routerLinkActive="selected">
-        <ion-icon name="log-out-outline"></ion-icon>
-         <ion-label>Desconectarse</ion-label>
-       </ion-item>
-      </ion-menu-toggle>
-   </ion-list>
+
+
    
   </ion-content>
 </ion-menu>

@@ -10,6 +10,9 @@
       Calendario
     </ion-title>
     <ion-buttons slot="end">
+      <ion-button (click)="today()">Today</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
       <ion-button (click)="openCalModal()">
         <ion-icon name="add" slot="icon-only"></ion-icon>
       </ion-button>
@@ -18,10 +21,10 @@
 </ion-header>
  
 <ion-content class="contenido">
-   <!-- Card for adding a new event -->
+   <!-- Card para agregar un nuevo evento -->
    <ion-card>
     <ion-card-header tappable (click)="collapseCard = !collapseCard">
-      <ion-card-title>New Event</ion-card-title>
+      <ion-card-title>Nueva reserva</ion-card-title>
     </ion-card-header>
     <ion-card-content *ngIf="!collapseCard">
  
@@ -29,7 +32,11 @@
         <ion-label>Hora</ion-label>
         <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
       </ion-item>
-
+      <ion-item>
+        <ion-label>End</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+      </ion-item>
+      <ion-button fill="outline" expand="block" (click)="addEvent()">Guardar</ion-button>
  
     </ion-card-content>
   </ion-card>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Servicio } from '../models/servicio';
 import { ServiciosService } from '../services/servicios.service';
 
@@ -14,7 +15,10 @@ export class ReservarPage implements OnInit {
    }];
 
 
-  constructor(private firestoreService: ServiciosService ) { 
+  constructor(
+    private firestoreService: ServiciosService,
+    private router: Router
+  ) { 
     
 
   }
@@ -35,4 +39,7 @@ export class ReservarPage implements OnInit {
     this.obtenerListaServicios();
   }
 
+  irReservas(){
+    this.router.navigate(['/reservas']);
+  }
 }

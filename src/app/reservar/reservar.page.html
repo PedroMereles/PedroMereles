@@ -11,51 +11,14 @@
 </ion-header>
 
 <ion-content>
-  <h1>LISTADO DE SERVICIOS</h1>
+  <p>Descripcion                        Precio</p>
   <ion-list>
     <ion-item *ngFor="let documentServicio of arrayColeccionServicio" >
-      <ion-grid>
-        <ion-row>
-          <p>{{documentServicio.data.servicio}}</p>
-          <p>{{documentServicio.data.precio}}</p>
-        </ion-row>
-        <ion-row>
-          <p>{{documentServicio.data.precio}}</p>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
-  </ion-list>
+        <ion-label >{{documentServicio.data.servicio}}             {{documentServicio.data.precio}} </ion-label>
+      <ion-button   (click)="irReservas()">
+        Seleccionar
+      </ion-button>
 
-  <ion-list>
-    <ion-item>
-      <ion-label >Pokémon Yellow</ion-label>
-      <ion-button   routerLink="../reservas">
-        Aceptar
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mega Man X</ion-label>
-      <ion-button>
-        Aceptar
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>The Legend of Zelda</ion-label>
-      <ion-button>
-        Aceptar
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pac-Man</ion-label>
-      <ion-button>
-        Aceptar
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Super Mario World</ion-label>
-      <ion-button>
-        Aceptar
-      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
