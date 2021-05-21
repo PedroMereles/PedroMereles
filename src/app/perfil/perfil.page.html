@@ -11,8 +11,15 @@
 </ion-header>
 
 <ion-content>
-  <div >
-  <ion-card>
+  
+  <ion-tabs id="tabs">
+    <ion-tab-bar slot="bottom" id="tab-bar">
+      <ion-tab-button (click)="principal()"  >
+        <ion-icon name="home"></ion-icon>
+       </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
     <ion-card-content>
       <h2>Nombre:</h2>
       <h2>{{user?.userNombre}}</h2>
@@ -32,9 +39,11 @@
       <h2>Fecha Registro:</h2>
       <p>{{user?.createdAt | date}}</p>
     </ion-card-content>
-  </ion-card>
-</div>
+
 <div>
   <ion-button type="submit"  routerLink="" shape="round" (click)="editarPerfil()" >Modificar Perfil</ion-button>
 </div>
 </ion-content>
+
+ 
+

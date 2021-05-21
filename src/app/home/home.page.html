@@ -12,7 +12,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
+
+  <ion-tabs id="tabs">
+    <ion-tab-bar slot="bottom" id="tab-bar">
+      <ion-tab-button (click)="principal()"  >
+        <ion-icon name="home"></ion-icon>
+       </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  
   <ion-img src="../../assets/LOGOCAR.png" class="imagen" > </ion-img>
   <ion-header collapse="condense">
   </ion-header> 
+
+  
+  
 </ion-content>

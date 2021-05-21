@@ -28,7 +28,10 @@ export class PerfilPage implements OnInit {
 
   editarPerfil()
   {
-      this.router.navigate(['/editar/perfil']);
-      
+    this.router.navigate(['/editar/perfil']);   
+  }
+  principal()
+  {
+    this.router.navigate(['./home']);
   }
 }

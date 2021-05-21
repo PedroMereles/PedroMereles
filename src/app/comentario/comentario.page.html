@@ -1,0 +1,50 @@
+<app-submenu>
+  
+</app-submenu>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="openComentarios()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Comentario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs id="tabs">
+    <ion-tab-bar slot="bottom" id="tab-bar">
+      <ion-tab-button (click)="principal()"  >
+        <ion-icon name="home"></ion-icon>
+       </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <p>Opiniones</p>
+  <ion-card>
+    <ion-card-content>
+    
+        <ion-item *ngFor="let opinion of opiniones" class="itm">
+          <ion-row>
+            <ion-col>
+              <ion-text class="lbl" >  {{opinion.comentario}} </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text class="lb2" >  {{opinion.servicio}}</ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text class="lbl" >  {{opinion.puntaje}}estrellas</ion-text>
+            </ion-col>
+          </ion-row>
+        
+        </ion-item>
+    
+    
+    </ion-card-content>
+  </ion-card>
+</ion-content>

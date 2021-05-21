@@ -1,0 +1,24 @@
+<app-submenu>
+  
+</app-submenu>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Grupos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs id="tabs">
+    <ion-tab-bar slot="bottom" id="tab-bar">
+      <ion-tab-button (click)="principal()"  >
+        <ion-icon name="home"></ion-icon>
+       </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+ 
+  <ion-list>
+    <ion-item *ngFor="let documentoGrupo of arrayColeccionGrupo" >
+        <ion-label >{{documentoGrupo.data.descripcion}}  </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

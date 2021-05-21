@@ -1,0 +1,52 @@
+
+<app-submenu>
+  
+</app-submenu>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Opiniones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+       <ion-tabs id="tabs">
+        <ion-tab-bar slot="bottom" id="tab-bar">
+          <ion-tab-button (click)="principal()"  >
+            <ion-icon name="home"></ion-icon>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+ <ion-card>  
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Servicio Realizado</ion-label>
+        <ion-select placeholder="Seleccione uno" [(ngModel)]="opinion.servicio"> 
+          <ion-select-option  *ngFor = "let g of reservas"  >{{g.servicio}} {{g.horario}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Puntaje</ion-label>
+        <ion-select placeholder="Seleccione uno"  [(ngModel)]="opinion.puntaje"> 
+          <ion-select-option  > 1 </ion-select-option>
+          <ion-select-option  > 2 </ion-select-option>
+          <ion-select-option  > 3 </ion-select-option>
+          <ion-select-option  > 4 </ion-select-option>
+          <ion-select-option  > 5 </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Comentario" required type= "text" [(ngModel)]="opinion.comentario"></ion-input>
+      </ion-item>
+      
+    </ion-card-content>
+  </ion-card>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button type="submit" class="guardar" (click)= "guardarComentario()" >Guardar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -48,3 +48,50 @@ ion-list, ion-card{
     font-family: 'RobotoMono'  !important;
     color: white
 }
+
+#item{
+    --background: transparent !important;
+    border: none !important;
+    color: black !important;
+}
+
+#list{
+    --background: transparent !important;
+    border: none !important;
+    width: 90%;
+    border-radius: 2%;
+}
+
+#tabs{
+    height: 100%;
+}
+#tab-bar{
+    --background: #5da3ff !important;
+}
+.loginlabel{
+    color: black !important;
+    
+}
+.login1{
+    font-size: 0.57rem;
+}
+.login2{
+    font-size: 0.75rem;
+}
+.username{
+    font-size: 0.75rem;
+}
+
+.selete {
+    --max-width: 100% !important;
+    --width: 100% !important;
+    --justify-content: center !important;
+    --max-height : 100% !important
+  }
+  .alert-wrapper{
+    --max-width: 80% !important;
+    --width: 80% !important;
+    --justify-content: center !important;
+    --max-height : 100% !important
+
+  }

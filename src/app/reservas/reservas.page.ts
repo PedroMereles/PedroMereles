@@ -3,7 +3,7 @@ import { CalendarComponent } from 'ionic2-calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-reservas',
   templateUrl: './reservas.page.html',
@@ -27,6 +27,7 @@ export class ReservasPage implements OnInit {
 
   constructor(
     private alertCtrl: AlertController,
+    private router: Router,
     @Inject(LOCALE_ID) 
     private locale: string) { }
 
@@ -97,6 +98,11 @@ onTimeSelected(ev) {
   this.event.startTime = selected.toISOString();
   selected.setHours(selected.getHours() + 1);
   this.event.endTime = (selected.toISOString());
+}
+
+principal()
+{
+  this.router.navigate(['./home']);
 }
 
 }

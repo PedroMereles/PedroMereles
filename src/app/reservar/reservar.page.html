@@ -6,19 +6,52 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="openServicios()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Servicios</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p>Descripcion                        Precio</p>
-  <ion-list>
-    <ion-item *ngFor="let documentServicio of arrayColeccionServicio" >
-        <ion-label >{{documentServicio.data.servicio}}             {{documentServicio.data.precio}} </ion-label>
-      <ion-button   (click)="irReservas()">
-        Seleccionar
-      </ion-button>
 
+  
+  <ion-tabs id="tabs">
+    <ion-tab-bar slot="bottom" id="tab-bar">
+      <ion-tab-button (click)="principal()"  >
+        <ion-icon name="home"></ion-icon>
+       </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  <ion-list>  
+    <ion-item>
+      <ion-label>Grupo</ion-label>
+      <ion-select placeholder="Seleccione uno" [(ngModel)]="reserva.grupo"> 
+        <ion-select-option  *ngFor = "let g of grupos"  >{{g.descripcion}}</ion-select-option>
+      </ion-select>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de Servicio</ion-label>
+         <ion-select placeholder="Seleccione uno" (click)="obtenerServicio()" [(ngModel)]="reserva.servicio"> 
+         <ion-select-option  *ngFor = "let s of servicios" >{{s.servicio}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Horario</ion-label>
+      <ion-datetime placeholder="Seleccione la Fecha"
+        [dayShortNames]="customDayShortNames"
+        displayFormat="DDD. MMM DD, YYYY HH "
+        monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"  [(ngModel)]="reserva.horario">
+      
+      </ion-datetime>
+    </ion-item>
+    <ion-button (click)= "guardarReserva()">Guardar</ion-button>
+    
   </ion-list>
+
+
 </ion-content>

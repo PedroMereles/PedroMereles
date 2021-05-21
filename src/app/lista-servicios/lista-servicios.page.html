@@ -1,0 +1,45 @@
+<app-submenu>
+</app-submenu>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista Detallada de Servicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs id="tabs">
+    <ion-tab-bar slot="bottom" id="tab-bar">
+      <ion-tab-button (click)="principal()"  >
+        <ion-icon name="home"></ion-icon>
+       </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <p>Lista Detallada de Servicios</p>
+  <ion-card>
+    <ion-card-content>
+    
+        <ion-item *ngFor="let s of servicios" class="itm">
+          <ion-row>
+            <ion-col>
+              <ion-text class="lbl" >{{s.servicio}} </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text class="lb2" >{{s.grupo}}</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text class="lb2" >{{s.precio}}</ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text class="lbl" >{{s.observacion}}</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+    
+    
+    </ion-card-content>
+  </ion-card>
+</ion-content>

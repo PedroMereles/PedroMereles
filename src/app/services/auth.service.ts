@@ -71,7 +71,7 @@ export class AuthService {
         })
         .catch(error =>{
           this.toast(error.message,'danger');
-
+          loading.dismiss();
         })
       })
       .catch(error => {
@@ -135,7 +135,7 @@ export class AuthService {
       message: message,
       color: status,
       position: 'top',
-      duration: 1000
+      duration: 2000
     });
     toast.present();
 

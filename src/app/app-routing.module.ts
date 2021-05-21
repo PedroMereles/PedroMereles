@@ -61,6 +61,30 @@ const routes: Routes = [
   {
     path: 'cal-modal',
     loadChildren: () => import('./cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
+  },
+  {
+    path: 'comentario',
+    loadChildren: () => import('./comentario/comentario.module').then( m => m.ComentarioPageModule)
+  },
+  {
+    path: 'coment',
+    loadChildren: () => import('./coment/coment.module').then( m => m.ComentPageModule)
+  },
+  {
+    path: 'grupo',
+    loadChildren: () => import('./grupo/grupo.module').then( m => m.GrupoPageModule)
+  },
+  {
+    path: 'agregar-comentario',
+    loadChildren: () => import('./agregar-comentario/agregar-comentario.module').then( m => m.AgregarComentarioPageModule)
+  },
+  {
+    path: 'agregar-servicio',
+    loadChildren: () => import('./agregar-servicio/agregar-servicio.module').then( m => m.AgregarServicioPageModule)
+  },
+  {
+    path: 'lista-servicios',
+    loadChildren: () => import('./lista-servicios/lista-servicios.module').then( m => m.ListaServiciosPageModule)
   }
 ];
 

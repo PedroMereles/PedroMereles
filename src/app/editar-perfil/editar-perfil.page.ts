@@ -79,4 +79,10 @@ export class EditarPerfilPage implements OnInit
      });
      toast.present();
   }
+
+  principal()
+  {
+      this.router.navigate(['../home']);
+      
+  }
 }

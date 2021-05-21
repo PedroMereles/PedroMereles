@@ -26,6 +26,14 @@ export class SubmenuComponent implements OnInit {
   irServicios(){
     this.router.navigate(["/reservar"]);
   }
+  irOpinion(){
+    this.router.navigate(["/comentario"]);
+  }
+  irReservas(){
+    this.router.navigate(["/reservas"]);
+  }
 
-
+  irLista(){
+    this.router.navigate(["/lista-servicios"]);
+  }
 }

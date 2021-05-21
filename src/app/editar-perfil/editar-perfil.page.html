@@ -9,32 +9,45 @@
 </ion-header>
 
 <ion-content>
+  <ion-tabs id="tabs">
+    <ion-tab-bar slot="bottom" id="tab-bar">
+      <ion-tab-button (click)="principal()"  >
+        <ion-icon name="home"></ion-icon>
+       </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
   <ion-card>
     <ion-card-content>
       <ion-row>
         <ion-col>
           <ion-item>
+            <ion-label>Nombre :</ion-label>
             <ion-input placeholder="Nombre" required type= "text"[(ngModel)]="nombre"></ion-input>
           </ion-item>
           <ion-item>
+            <ion-label>Correo Electronico : </ion-label>
             <ion-input placeholder="Correo Electronico" required type= "text"[(ngModel)]="email" disabled></ion-input>
           </ion-item>
           <ion-item>
+            <ion-label>Documento :</ion-label>
             <ion-input placeholder="Documento" required type= "text"[(ngModel)]="documento"></ion-input>
           </ion-item>
           <ion-item>
+            <ion-label>Contacto :</ion-label>
             <ion-input placeholder="Contacto" required type= "text"[(ngModel)]="telefono"></ion-input>
           </ion-item>
           <ion-item>
+            <ion-label>Direccion :</ion-label>
             <ion-input placeholder="Direccion" required type= "text"[(ngModel)]="direccion"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
+     </ion-card-content>
+  </ion-card>
+  
       <ion-row>
         <ion-col>
           <ion-button type="submit"  routerLink="" shape="round" (click)="actualizarPerfil()" >Guardar</ion-button>
         </ion-col>
       </ion-row>
-    </ion-card-content>
-  </ion-card>
 </ion-content>

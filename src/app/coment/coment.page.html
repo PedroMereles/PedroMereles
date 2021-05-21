@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar comentario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Comentario</ion-label>
+    <ion-input [(ngModel)]="comentario.comentario"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Descripción</ion-label>
+    <ion-input [(ngModel)]="comentario.puntaje"></ion-input>
+  </ion-item>
+  <ion-button (click)="clicBotonInsertar()">Añadir tarea</ion-button>
+</ion-content>
