@@ -1,55 +1,19 @@
-<app-submenu>
-  
-</app-submenu>
+<app-submenu> </app-submenu>
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="principal()">
+        <ion-icon name="home" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Calendario
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="today()">Today</ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCalModal()">
-        <ion-icon name="add" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <ion-title> Calendario </ion-title>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content class="contenido">
-  <ion-tabs id="tabs">
-    <ion-tab-bar slot="bottom" id="tab-bar">
-      <ion-tab-button (click)="principal()"  >
-        <ion-icon name="home"></ion-icon>
-       </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-
-   <!-- Card para agregar un nuevo evento -->
-   <ion-card>
-    <ion-card-header tappable (click)="collapseCard = !collapseCard">
-      <ion-card-title>Nueva reserva</ion-card-title>
-    </ion-card-header>
-    <ion-card-content *ngIf="!collapseCard">
- 
-      <ion-item>
-        <ion-label>Hora</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
-      </ion-item>
-      <ion-item>
-        <ion-label>End</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
-      </ion-item>
-      <ion-button fill="outline" expand="block" (click)="addEvent()">Guardar</ion-button>
- 
-    </ion-card-content>
-  </ion-card>
-
-  
   <ion-segment [(ngModel)]="calendar.mode">
     <ion-segment-button value="month">
       <ion-label class="calendario">MES</ion-label>
@@ -61,7 +25,7 @@
       <ion-label class="calendario">DIA</ion-label>
     </ion-segment-button>
   </ion-segment>
- 
+
   <ion-row>
     <!-- Move back one screen of the slides -->
     <ion-col size="2">
@@ -69,11 +33,11 @@
         <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-col>
- 
+
     <ion-col size="8" class="ion-text-center">
       <h2>{{ viewTitle }}</h2>
     </ion-col>
- 
+
     <!-- Move forward one screen of the slides -->
     <ion-col size="2">
       <ion-button fill="clear" (click)="next()">
@@ -81,7 +45,7 @@
       </ion-button>
     </ion-col>
   </ion-row>
- 
+
   <calendar
     [eventSource]="eventSource"
     [calendarMode]="calendar.mode"
@@ -90,11 +54,8 @@
     (onTitleChanged)="onViewTitleChanged($event)"
     startHour="6"
     endHour="19"
-    step="30"
+    step="60"
     startingDayWeek="1"
   >
   </calendar>
-
-  
- 
 </ion-content>

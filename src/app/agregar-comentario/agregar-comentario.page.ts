@@ -41,6 +41,7 @@ export class AgregarComentarioPage implements OnInit {
         horario : "",
         id : null,
         servicio : "",
+        fecha: new Date()
       } 
       this.opinion = {
         id: "",
@@ -116,7 +117,7 @@ export class AgregarComentarioPage implements OnInit {
         this.firestoreService.insertar("opinion", this.opinion)
       }
       loading.dismiss();
-      this.toast('La reserva se ha guardado exitosamente.', 'success');
+      this.toast('Su comentario se ha guardado exitosamente.', 'success');
       this.opinion = {
         id: "",
         servicio: "",
@@ -125,10 +126,12 @@ export class AgregarComentarioPage implements OnInit {
         puntaje : ""
     
       }
+      this.router.navigate(['../comentario']);
     } else 
     {
       this.toast('Se debe de completar todos los campos...', 'warning');
     }
+
   }
 
   async toast(message, status){

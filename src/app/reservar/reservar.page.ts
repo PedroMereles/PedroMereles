@@ -41,6 +41,7 @@ export class ReservarPage implements OnInit {
     horario : "",
     id : null,
     servicio : "", 
+    fecha: new Date()
 
   }
 }
@@ -199,6 +200,9 @@ export class ReservarPage implements OnInit {
       {
         console.log("***************************************")
         //this.reserva.horario = new Date().toDateString();
+        console.log(new Date(this.reserva.horario))
+        console.log(this.reserva.fecha)
+        this.reserva.fecha = new Date(this.reserva.horario)
         this.reserva.horario = this.getDate(this.reserva.horario);
         this.firestoreService.insertar("reserva", this.reserva)
       }
@@ -210,6 +214,7 @@ export class ReservarPage implements OnInit {
         horario : "",
         id : null,
         servicio : "", 
+        fecha: new Date()
     
       }
     } else 
